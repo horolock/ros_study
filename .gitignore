@@ -3,3 +3,9 @@
 */lib/
 */log/
 */install/
+
+build/
+bin/
+lib/
+log/
+install/
