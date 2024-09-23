@@ -12,6 +12,7 @@ find_package(std_msgs REQUIRED)
 
 # Build
 add_executable(number_publisher src/number_publisher.cpp)
+add_executable(number_counter src/number_counter.cpp)
 
 # Link
 ament_target_dependencies(number_publisher 
@@ -19,9 +20,15 @@ ament_target_dependencies(number_publisher
   std_msgs
 )
 
+ament_target_dependencies(number_counter 
+  rclcpp 
+  std_msgs 
+)
+
 # Install
 install(TARGETS 
   number_publisher
+  number_counter 
   DESTINATION lib/${PROJECT_NAME}
 )
 
