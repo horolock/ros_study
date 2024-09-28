@@ -9,10 +9,12 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(std_srvs REQUIRED)
 
 # Build
 add_executable(number_publisher src/number_publisher.cpp)
 add_executable(number_counter src/number_counter.cpp)
+add_executable(reset_client src/reset_client.cpp)
 
 # Link
 ament_target_dependencies(number_publisher 
@@ -23,12 +25,20 @@ ament_target_dependencies(number_publisher
 ament_target_dependencies(number_counter 
   rclcpp 
   std_msgs 
+  std_srvs 
+)
+
+ament_target_dependencies(reset_client 
+  rclcpp 
+  std_msgs 
+  std_srvs 
 )
 
 # Install
 install(TARGETS 
   number_publisher
   number_counter 
+  reset_client 
   DESTINATION lib/${PROJECT_NAME}
 )
 

@@ -32,7 +32,7 @@ private:
     /* Publisher */
     rclcpp::TimerBase::SharedPtr mTimer;
     rclcpp::Publisher<std_msgs::msg::Int64>::SharedPtr mNumberPublisher;
-
+    
     /* Member variables */
     int64_t mCounter;
 };
