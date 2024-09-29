@@ -9,13 +9,15 @@
         "${workspaceFolder}/**",
         "/opt/ros/humble/include/**",
         "/home/hojoon/ros_study/src/number_count/include/**",
-        "/usr/include/**"
+        "/usr/include/**",
+        "/home/hojoon/ros_study/install/mmwave_vision/include/mmwave_vision/**",
+        "/home/hojoon/ros_study/src/mmwave_vision/include/**"
       ],
       "name": "ROS",
       "intelliSenseMode": "gcc-x64",
       "compilerPath": "/usr/bin/gcc",
       "cStandard": "gnu11",
-      "cppStandard": "c++14"
+      "cppStandard": "c++17"
     }
   ],
   "version": 4
