@@ -13,6 +13,7 @@ set (srv_files
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(ros_serial REQUIRED)
 
 # START ROS Interfaces
 find_package(rosidl_default_generators REQUIRED)
