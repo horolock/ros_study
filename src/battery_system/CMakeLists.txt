@@ -11,9 +11,18 @@ find_package(rclcpp REQUIRED)
 find_package(my_robot_interfaces REQUIRED)
 
 # Build
+add_executable(battery_node src/battery.cpp)
 
 # Add Dependencies
+ament_target_dependencies(battery_node 
+  rclcpp 
+  my_robot_interfaces
+)
 
 # Install
+install(TARGETS 
+  battery_node
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 ament_package()
