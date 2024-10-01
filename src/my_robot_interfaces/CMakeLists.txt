@@ -7,10 +7,12 @@ endif()
 
 set(msg_files 
   "msg/HardwareStatus.msg"
+  "msg/LEDPanelState.msg"
 )
 
 set(srv_files
   "srv/ComputeRectangleArea.srv"
+  "srv/LEDCommand.srv"
 )
 
 # find dependencies
