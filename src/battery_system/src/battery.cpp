@@ -20,9 +20,9 @@ private:
             m_request_thread = std::thread(std::bind(&BatteryNode::send_request, this, 3, true));
         } else if (m_counter == 10) {
             /* Battery charged. */
-            RCLCPP_INFO(this->get_logger(), "Battery FULL.");
-            m_request_thread = std::thread(std::bind(&BatteryNode::send_request, this, 3, false));
+            m_on_thread = std::thread(std::bind(&BatteryNode::send_request, this, 3, false));
             m_counter = 0;
+            RCLCPP_INFO(this->get_logger(), "Battery FULL.");
             return;
         }
         
@@ -52,7 +52,9 @@ private:
     }
 
     rclcpp::TimerBase::SharedPtr m_timer;
+    std::vector<std::thread> m_thread_pool;
     std::thread m_request_thread;
+    std::thread m_on_thread;
     int8_t m_counter = 0;
 };
 

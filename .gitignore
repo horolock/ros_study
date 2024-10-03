@@ -9,3 +9,5 @@ bin/
 lib/
 log/
 install/
+
+.vscode/**

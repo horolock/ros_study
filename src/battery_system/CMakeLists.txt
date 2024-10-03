@@ -12,6 +12,7 @@ find_package(my_robot_interfaces REQUIRED)
 
 # Build
 add_executable(battery_node src/battery.cpp)
+add_executable(led_panel src/led_panel.cpp)
 
 # Add Dependencies
 ament_target_dependencies(battery_node 
@@ -19,9 +20,15 @@ ament_target_dependencies(battery_node
   my_robot_interfaces
 )
 
+ament_target_dependencies(led_panel 
+  rclcpp 
+  my_robot_interfaces 
+)
+
 # Install
 install(TARGETS 
   battery_node
+  led_panel 
   DESTINATION lib/${PROJECT_NAME}
 )
 
